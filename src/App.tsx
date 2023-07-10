@@ -8,6 +8,8 @@ import {Oscar} from "./components/Oscar";
 import {Button} from "./components/Button";
 import {Input} from "./components/Input";
 import {Container} from "./components/Conteiner";
+import {LoggedIn} from "./components/state/LoggedIn";
+import {User} from "./components/state/User";
 
 function App() {
     const personName = {
@@ -30,6 +32,8 @@ function App() {
     ]
     return (
     <div className="App">
+        <LoggedIn/>
+        <User />
         <Greet name={'Pavel'} isLoggedIn={true}/>
         <Person name={personName}/>
         <PersonList names={nameList}/>
