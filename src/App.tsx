@@ -11,6 +11,8 @@ import {Container} from "./components/Conteiner";
 import {LoggedIn} from "./components/state/LoggedIn";
 import {User} from "./components/state/User";
 import {Counter} from "./components/state/Counter";
+import {Box} from "./components/context/Box";
+import {ThemeContextProvider} from "./components/context/ThemeContext";
 
 function App() {
     const personName = {
@@ -33,22 +35,25 @@ function App() {
     ]
     return (
     <div className="App">
-        <LoggedIn/>
-        <User />
-        <Greet name={'Pavel'} isLoggedIn={true}/>
-        <Person name={personName}/>
-        <PersonList names={nameList}/>
-        <Status status={'error'}/>
-        <Heading>Placeholder text</Heading>
-        <Oscar>
-            <Heading>Oscar goes to Leonardo Dicaprio!</Heading>
-        </Oscar>
-        <Button handleClick={(event, id) => {
-            console.log('button click', event, id)
-        }}/>
-        <Input value={''} handleChange={(event) => {console.log(event)}}/>
-        <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
-        <Counter/>
+        <ThemeContextProvider>
+            <LoggedIn/>
+            <User />
+            <Greet name={'Pavel'} isLoggedIn={true}/>
+            <Person name={personName}/>
+            <PersonList names={nameList}/>
+            <Status status={'error'}/>
+            <Heading>Placeholder text</Heading>
+            <Oscar>
+                <Heading>Oscar goes to Leonardo Dicaprio!</Heading>
+            </Oscar>
+            <Button handleClick={(event, id) => {
+                console.log('button click', event, id)
+            }}/>
+            <Input value={''} handleChange={(event) => {console.log(event)}}/>
+            <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
+            <Counter/>
+            <Box/>
+        </ThemeContextProvider>
     </div>
     );
 }
