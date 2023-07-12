@@ -17,6 +17,7 @@ import {UserContextProvider} from "./components/context/UserContext";
 import {User as CUser} from "./components/context/User"
 import {DomRef} from "./components/ref/DomRef";
 import {MutableRef} from "./components/ref/MutableRef";
+import {Counter as CounterClass} from "./components/class/Counter";
 
 function App() {
     const personName = {
@@ -63,6 +64,7 @@ function App() {
         </UserContextProvider>
         <DomRef/>
         <MutableRef/>
+        <CounterClass message={'Massage'}/>
     </div>
     );
 }
