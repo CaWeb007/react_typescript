@@ -20,6 +20,7 @@ import {MutableRef} from "./components/ref/MutableRef";
 import {Counter as CounterClass} from "./components/class/Counter";
 import {Private} from "./components/auth/Private";
 import {Profile} from "./components/auth/Profile";
+import {List} from "./components/generics/List";
 
 function App() {
     const personName = {
@@ -68,6 +69,28 @@ function App() {
         <MutableRef/>
         <CounterClass message={'Massage'}/>
         <Private isLoggedIn={true} component={Profile}/>
+        <List items={['First', 'Second', 'Third']} onClick={(item) => console.log(item)}/>
+        <List items={[1,2,3]} onClick={(item) => console.log(item)}/>
+        <List
+            items={[
+                {
+                    id: 1,
+                    first: 'Bruce',
+                    last: 'Wayne'
+                },
+                {
+                    id: 2,
+                    first: 'Bruce2',
+                    last: 'Wayne2'
+                },
+                {
+                    id: 3,
+                    first: 'Bruce3',
+                    last: 'Wayne3'
+                },
+            ]}
+            onClick={(item) => console.log(item)}
+        />
     </div>
     );
 }
