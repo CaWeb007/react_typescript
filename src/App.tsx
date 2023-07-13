@@ -25,6 +25,7 @@ import {RandomNumber} from "./components/restriction/RandomNumber";
 import {Toast} from "./components/templateliterals/Toast";
 import {CustomButton} from "./components/html/Button";
 import {CustomInput} from "./components/html/Input";
+import {Text} from "./components/polymorfic/Text";
 
 function App() {
     const personName = {
@@ -101,6 +102,9 @@ function App() {
             Primary button
         </CustomButton>
         <CustomInput />
+        <Text as='h1' size={"lg"}>Heading</Text>
+        <Text as='p' size={"md"}>Paragraph</Text>
+        <Text as='label' size={"sm"} color={"secondary"} htmlFor={'someId'}>Label</Text>
     </div>
     );
 }
